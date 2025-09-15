@@ -1,33 +1,53 @@
-# webdev_week1
+# Web Development Week 1
 
-# What is TypeScript?
-TypeScript is a superset of JavaScript that adds static typing to the language. Developed and maintained by Microsoft, TypeScript builds on JavaScript by introducing type definitions, which help catch errors during development rather than at runtime.
-## How TypeScript Compiles into JavaScript
-TypeScript code is not directly executed by browsers or Node.js. Instead, it needs to be transpiled into plain JavaScript. This process involves the TypeScript compiler (`tsc`), which converts TypeScript code into JavaScript code that can run in any JavaScript environment.
-Here's a simple example:
-### TypeScript Code (`example.ts`):
-```TypeScript
-   let message: string = "Hello, TypeScript!";
-   console.log(message);
+This project contains exercises and examples for the first week of web development, covering HTML, CSS, and TypeScript fundamentals.
+
+## Structure
+
+- `assignment1/` - Complete assignment with automated testing and GitHub Classroom integration
+- `exercises/` - Practice exercises for HTML, CSS, and Git
+- `calculator/` - A basic calculator application
+- `demo_code/` - Example TypeScript code
+- `MyFirstReactApp/` - A React application setup
+
+## Assignment 1
+
+The `assignment1/` folder contains a comprehensive web development assignment that covers:
+- HTML5 semantic structure and accessibility
+- CSS3 Grid, Flexbox, and responsive design
+- TypeScript fundamentals with type safety
+- Calculator implementation with scientific functions
+- Automated testing with Jest
+- GitHub Classroom integration with autograding
+
+See `assignment1/README.md` for complete details.
+
+## Getting Started
+
+### For Assignment 1:
+```bash
+cd assignment1
+npm install
+npm test
 ```
 
+### For Individual Exercises:
+1. Navigate to the desired exercise or project folder
+2. Follow the instructions in each README file
 
-### Transpiled JavaScript Code (`example.js`):
-```TypeScript
-   var message = "Hello, TypeScript!";
-   console.log(message);
-```
+## Prerequisites
 
+- Node.js (for TypeScript compilation and React)
+- A modern web browser
+- Code editor (VS Code recommended)
 
-To transpile TypeScript to JavaScript, you can use the TypeScript compiler:
-```
-tsc example.ts
-```
+## Original Exercises
 
+1. **Git Basics** - Learn fundamental Git commands
+2. **HTML Structure** - Practice semantic HTML
+3. **CSS Challenge** - Implement responsive layouts
 
-
-## Advantages of TypeScript Over Pure JavaScript
-1. Static Typing: TypeScript's type system helps catch errors at compile time, reducing runtime errors and improving code quality.
+Each exercise includes specific instructions and expected outcomes.
    ```TypeScript
    let count: number = "This will cause an error"; // Type error
    ```
