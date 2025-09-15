@@ -10,7 +10,7 @@
 - **Name:** Brian O'Donnell  
 - **Email:** bodonne3@depaul.edu  
 - **Office Location:** Online / Discord  
-- **Office Hours:** Wednesday & Friday, 1–2 PM via Discord  
+- **Office Hours:** Thursday & Friday, 1–2 PM via Discord  
 
 ---
 
@@ -62,7 +62,8 @@ This course covers the design and development of single-page web applications an
 ---
 
 ## 📢 Communication Guidelines  
-- Use Discord for all class-related questions  
+- Use Discord for all class-related questions 
+- Download [Discord](https://discord.com).  Join our class server [here](https://discord.gg/VjfeNTyj3r) 
 - Include `CSC436` in email subject lines  
 - Include full name in email body  
 - For code help:  
