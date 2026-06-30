@@ -1,534 +1,260 @@
-# Web Development Week 1
+# Week 1: Internet and Web Foundations
 
-This project contains exercises and examples for the first week of web development, covering HTML, CSS, and TypeScript fundamentals.
+This week is intentionally designed for students who are starting with little or no web background. Before building sites and apps, students need a clear mental model of how the Internet works and how web browsers communicate with servers.
 
-## Structure
+## Week 1 Learning Goals
+By the end of week one, students should be able to:
+- explain what the course covers and how work will be assessed
+- describe the roles of clients, servers, and networks
+- explain what IP addresses, DNS, TCP, UDP, HTTP, and HTTPS are
+- trace the path of a browser request from a URL to a loaded page
+- use browser developer tools to inspect a network request
 
-- `assignment1/` - Complete assignment with automated testing and GitHub Classroom integration
-- `exercises/` - Practice exercises for HTML, CSS, and Git
-- `calculator/` - A basic calculator application
-- `demo_code/` - Example TypeScript code
-- `MyFirstReactApp/` - A React application setup
+---
 
-## Assignment 1
+## Syllabus Snapshot
+- **Homework:** regular practice and applied assignments throughout the quarter
+- **Quizzes:** 3 short quizzes covering core concepts
+- **Midterm Exam:** one exam focused on conceptual understanding and applied reasoning
+- **Final Project:** a larger web application built over the second half of the course
 
-The `assignment1/` folder contains a comprehensive web development assignment that covers:
-- HTML5 semantic structure and accessibility
-- CSS3 Grid, Flexbox, and responsive design
-- TypeScript fundamentals with type safety
-- Calculator implementation with scientific functions
-- Automated testing with Jest
-- GitHub Classroom integration with autograding
+Students should leave week one understanding both the course structure and the basic communication systems that make web development possible.
 
-See `assignment1/README.md` for complete details.
+---
 
-## Getting Started
+## 1. The Big Picture: What Happens When You Visit a Website?
 
-### For Assignment 1:
-```bash
-cd assignment1
-npm install
-npm test
-```
+When you type a URL into a browser, many systems work together:
+1. The browser reads the URL.
+2. DNS translates the human-friendly domain name into an IP address.
+3. Your device sends packets across one or more networks.
+4. TCP or UDP moves that traffic depending on the protocol being used.
+5. HTTP or HTTPS defines the format of the request and response.
+6. The server returns content such as HTML, CSS, JavaScript, images, and data.
+7. The browser renders the page and may make additional requests in the background.
 
-### For Individual Exercises:
-1. Navigate to the desired exercise or project folder
-2. Follow the instructions in each README file
+Web development sits on top of this stack. Students need this flow in mind before learning frameworks and APIs.
 
-## Prerequisites
+---
 
-- Node.js (for TypeScript compilation and React)
-- A modern web browser
-- Code editor (VS Code recommended)
-
-## Original Exercises
+## 2. Clients, Servers, and Packets
 
-1. **Git Basics** - Learn fundamental Git commands
-2. **HTML Structure** - Practice semantic HTML
-3. **CSS Challenge** - Implement responsive layouts
-
-Each exercise includes specific instructions and expected outcomes.
-   ```TypeScript
-   let count: number = "This will cause an error"; // Type error
-   ```
-
-
-
-2. Enhanced IDE Support: TypeScript provides better autocompletion, navigation, and refactoring capabilities in IDEs like Visual Studio Code, making development more efficient.
-3. Improved Readability and Maintainability: Type annotations and interfaces make the code more self-documenting, easier to understand, and maintain.
-```TypeScript
-   interface User {
-       name: string;
-       age: number;
-   }
-
-   let user: User = { name: "Alice", age: 25 };
-   ```
-
-
-
-4. Modern JavaScript Features: TypeScript supports the latest JavaScript features (ES6 and beyond) and compiles them down to a version of JavaScript that can run in older environments.
-   ```TypeScript
-   class Person {
-       constructor(public name: string, public age: number) {}
-   }
-
-   let person = new Person("Bob", 30);
-   ```
-
-
-5. Large Community and Ecosystem: TypeScript has a large and active community, with many libraries and frameworks providing type definitions, making it easier to integrate with existing JavaScript projects.
-6. Optional Typing: You can gradually adopt TypeScript in your project. You can start with plain JavaScript and add type annotations as needed, making the transition smooth.
-## Example: TypeScript vs. JavaScript
-### JavaScript:
-```Javascript
-function greet(name) {
-    return "Hello, " + name;
-}
-
-console.log(greet(42)); // Runtime error: 42 is not a string
-```
-
-
-### TypeScript:
-```TypeScript
-function greet(name: string): string {
-    return `Hello, ${name}`;
-}
-
-console.log(greet(42)); // Compile-time error: Argument of type 'number' is not assignable to parameter of type 'string'
-```
-
+### Client
+A **client** is a device or application that asks for a resource. In this course, the browser is often the client.
 
-TypeScript's ability to catch errors early, provide better tooling, and support modern JavaScript features makes it a powerful tool for developing robust and maintainable web applications.
-
-## Fundamentals of TypeScript
-1. Type Annotations: Explain how TypeScript allows you to add type annotations to variables, function parameters, and return types.
-   ```TypeScript
-   let message: string = "Hello, TypeScript!";
-   function greet(name: string): string {
-       return `Hello, ${name}!`;
-   }
-    ```
-
-2. Interfaces: Introduce interfaces to define the shape of objects.
-   ```TypeScript
-   interface User {
-       name: string;
-       age: number;
-   }
-
-   const user: User = {
-       name: "Alice",
-       age: 25
-   };
-    ```
-
-3. Classes: Show how TypeScript supports classes and inheritance.
-   ```TypeScript
-   class Animal {
-       name: string;
-       constructor(name: string) {
-           this.name = name;
-       }
-       move(distance: number = 0) {
-           console.log(`${this.name} moved ${distance} meters.`);
-       }
-   }
-
-   class Dog extends Animal {
-       bark() {
-           console.log("Woof! Woof!");
-       }
-   }
-
-   const dog = new Dog("Buddy");
-   dog.bark();
-   dog.move(10);
-    ```
-
-4. Generics: Explain the concept of generics for creating reusable components.
-   ```TypeScript
-   function identity<T>(arg: T): T {
-       return arg;
-   }
-
-   let output = identity<string>("myString");
-
-    ```
-
-## Data Structures in TypeScript
-### Arrays
-Arrays are used to store multiple values in a single variable.
-```TypeScript
-let numbers: number[] = [1, 2, 3, 4, 5];
-let strings: string[] = ["apple", "banana", "cherry"];
-```
-
-### Tuples
-Tuples allow you to store a fixed number of elements with specific types.
-```TypeScript
-let tuple: [string, number];
-tuple = ["hello", 42];
-```
-
-### Enums
-Enums are a way to define a set of named constants.
-```TypeScript
-enum Color {
-    Red,
-    Green,
-    Blue
-}
-
-let color: Color = Color.Green;
-```
-
-### Interfaces
-Interfaces define the shape of objects.
-```TypeScript
-interface User {
-    name: string;
-    age: number;
-}
-
-let user: User = {
-    name: "Alice",
-    age: 25
-};
-```
-
-### Classes
-Classes are blueprints for creating objects with properties and methods.
-```TypeScript
-class Person {
-    name: string;
-    age: number;
-
-    constructor(name: string, age: number) {
-        this.name = name;
-        this.age = age;
-    }
-
-    greet() {
-        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
-    }
-}
-
-let person = new Person("Bob", 30);
-person.greet();
-```
-
-### Maps
-Maps are collections of key-value pairs.
-```TypeScript
-let map = new Map<string, number>();
-map.set("apple", 1);
-map.set("banana", 2);
-
-console.log(map.get("apple")); // Output: 1
-
-```
-### Sets
-Sets are collections of unique values.
-```TypeScript
-let set = new Set<number>();
-set.add(1);
-set.add(2);
-set.add(2); // Duplicate value, will not be added
-
-console.log(set.has(1)); // Output: true
-```
-
-Generics
-Generics allow you to create reusable components that work with any data type.
-```TypeScript
-function identity<T>(arg: T): T {
-    return arg;
-}
-
-let output = identity<string>("myString");
-```
-
-
-## Calculator App
-### Project Structure
-Create the following files and folders:
-```
-/calculator-app
-  ├── index.html
-  ├── styles.css
-  └── app.ts
-```
-
-### Step 1: HTML Structure
-Create the index.html file with the basic structure and elements for the calculator.
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="calculator">
-        <input type="text" id="display" disabled>
-        <div class="buttons">
-            <button class="btn" data-value="7">7</button>
-            <button class="btn" data-value="8">8</button>
-            <button class="btn" data-value="9">9</button>
-            <button class="btn" data-value="/">/</button>
-            <button class="btn" data-value="4">4</button>
-            <button class="btn" data-value="5">5</button>
-            <button class="btn" data-value="6">6</button>
-            <button class="btn" data-value="*">*</button>
-            <button class="btn" data-value="1">1</button>
-            <button class="btn" data-value="2">2</button>
-            <button class="btn" data-value="3">3</button>
-            <button class="btn" data-value="-">-</button>
-            <button class="btn" data-value="0">0</button>
-            <button class="btn" data-value=".">.</button>
-            <button class="btn" data-value="=">=</button>
-            <button class="btn" data-value="+">+</button>
-            <button class="btn" data-value="C">C</button>
-        </div>
-    </div>
-    <script src="app.js"></script>
-</body>
-</html>
-```
-
-### Step 2: CSS Styling
-Create the styles.css file to style the calculator.
-```CSS
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
-}
-
-.calculator {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 200px;
-}
-
-#display {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-align: right;
-    font-size: 1.2em;
-}
-
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-.btn {
-    padding: 15px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 4px;
-    font-size: 1em;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-}
-
-```
-
-### Step 3: TypeScript Logic
-Create the app.ts file to handle the logic for the calculator.
-
-```TypeScript
-// Get references to DOM elements
-const display = document.getElementById("display") as HTMLInputElement;
-const buttons = document.querySelectorAll(".btn");
-
-let currentInput: string = "";
-let operator: string | null = null;
-let previousInput: string = "";
-
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        const value = (button as HTMLButtonElement).dataset.value;
-
-        if (value === "C") {
-            clearDisplay();
-        } else if (value === "=") {
-            calculateResult();
-        } else if (["+", "-", "*", "/"].includes(value!)) {
-            setOperator(value!);
-        } else {
-            appendToDisplay(value!);
-        }
-    });
-});
-
-function clearDisplay() {
-    currentInput = "";
-    operator = null;
-    previousInput = "";
-    display.value = "";
-}
-
-function appendToDisplay(value: string) {
-    currentInput += value;
-    display.value = currentInput;
-}
-
-function setOperator(op: string) {
-    if (currentInput === "") return;
-    if (operator !== null) calculateResult();
-    operator = op;
-    previousInput = currentInput;
-    currentInput = "";
-}
-
-function calculateResult() {
-    if (operator === null || currentInput === "") return;
-    const prev = parseFloat(previousInput);
-    const current = parseFloat(currentInput);
-    let result: number;
-
-    switch (operator) {
-        case "+":
-            result = prev + current;
-            break;
-        case "-":
-            result = prev - current;
-            break;
-        case "*":
-            result = prev * current;
-            break;
-        case "/":
-            result = prev / current;
-            break;
-        default:
-            return;
-    }
-
-    display.value = result.toString();
-    currentInput = result.toString();
-    operator = null;
-    previousInput = "";
-}
-```
-
-### Step 4: Compile TypeScript
-Compile the TypeScript file to JavaScript using the TypeScript compiler.
-```bash
-tsc app.ts
-```
-
-This will generate an app.js file that you can include in your HTML.
-
-### Running the Application
-Open the index.html file in a web browser. You should see a simple calculator application where you can perform basic arithmetic operations.
-
-## What is CSS?
-CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written in HTML or XML. CSS defines how elements should be rendered on screen, on paper, in speech, or on other media. It allows developers to separate content (HTML) from design (CSS), making it easier to maintain and update web pages.
-Different Approaches to Using CSS
-### Inline CSS:
-CSS is applied directly within HTML elements using the style attribute.
-Example:
-```CSS
-     <p style="color: blue; font-size: 14px;">This is a paragraph.</p>
-```
-
-#### Pros: Quick and easy for small changes.
-#### Cons: Not scalable, harder to maintain, and can lead to code duplication.
-### Internal CSS:
-CSS is defined within a style tag in the head section of an HTML document.
-Example:
-```CSS
-     <head>
-       <style>
-         p {
-           color: blue;
-           font-size: 14px;
-         }
-       </style>
-     </head>
-```
-
-#### Pros: Useful for single-page styles.
-#### Cons: Not reusable across multiple pages.
-### External CSS:
-CSS is written in a separate .css file and linked to the HTML document using the <link> tag.
-Example:
-```CSS
-     <head>
-       <link rel="stylesheet" href="styles.css">
-     </head>
-```
-
-#### Pros: Reusable across multiple pages, easier to maintain, and promotes cleaner HTML.
-#### Cons: Requires an additional HTTP request to load the CSS file.
-
-### CSS Frameworks:
-Predefined libraries like Bootstrap, Foundation, and Tailwind CSS that provide ready-to-use styles and components.
-#### Pros: Speeds up development, ensures consistency, and offers responsive design out of the box.
-#### Cons: Can lead to bloated code if not used carefully, and may require customization to fit specific needs.
-
-### Best Practices for Using CSS
-1. Keep It Simple:
-Write clean, readable, and maintainable CSS.
-Use meaningful class and ID names.
-2. Use a CSS Reset or Normalize:
-Reset or normalize CSS to ensure consistent styling across different browsers.
-3. Organize Your CSS:
-Group related styles together.
-Use comments to separate sections.
-4. Avoid Inline Styles:
-Use external or internal CSS for better maintainability.
-5. Use Shorthand Properties:
-Simplify your CSS by using shorthand properties where possible.
-Example:
-```CSS
-     margin: 10px 20px 30px 40px; /* top right bottom left */
-```
-
-6. Leverage CSS Variables:
-Use CSS variables for reusable values.
-Example:
-```CSS
-     :root {
-       --main-color: blue;
-     }
-     p {
-       color: var(--main-color);
-     }
-```
-
-7. Optimize for Performance:
-Minimize and compress CSS files.
-Use tools like Autoprefixer to handle vendor prefixes.
-8. Responsive Design:
-Use media queries to create responsive layouts.
-Example:
-```CSS
-     @media (max-width: 600px) {
-       body {
-         background-color: lightblue;
-       }
-     }
-
-```
+### Server
+A **server** is a machine or application that listens for requests and responds with files or data.
+
+### Packet
+Data sent across the Internet is broken into smaller units called **packets**. Routers move packets toward their destination. Those packets may not all take the exact same route.
+
+Important idea: the Internet is not one direct wire between a browser and a server. It is a network of networks forwarding packets between devices.
+
+---
+
+## 3. IP Addresses
+
+An **IP address** identifies a device on a network.
+
+### IPv4
+IPv4 addresses look like this:
+`192.168.1.10`
+
+### IPv6
+IPv6 addresses look like this:
+`2001:0db8:85a3:0000:0000:8a2e:0370:7334`
+
+### Public vs. Private IP
+- **Public IP:** visible to the wider Internet
+- **Private IP:** used inside local networks such as homes, schools, or offices
+
+### How Devices Get IP Addresses
+Most devices get an address automatically using **DHCP** (Dynamic Host Configuration Protocol). A router or network service assigns:
+- an IP address
+- a subnet mask
+- a default gateway
+- DNS server information
+
+### Why This Matters to Web Developers
+Every browser request ultimately targets an IP address, even if the user only sees a domain name.
+
+---
+
+## 4. DNS: The Internet's Phone Book
+
+**DNS** stands for **Domain Name System**.
+
+Humans prefer names like:
+`www.depaul.edu`
+
+Computers route traffic using IP addresses.
+
+DNS connects those two ideas by translating a domain name into one or more IP addresses.
+
+### Simplified DNS Lookup Flow
+1. Browser checks cache
+2. Operating system checks cache
+3. Resolver asks DNS servers
+4. DNS response returns the IP address
+5. Browser connects to that address
+
+### Why DNS Matters
+- makes the web easier for humans to use
+- allows servers to change IP addresses without changing public URLs
+- supports services like mail routing, load balancing, and CDN usage
+
+---
+
+## 5. Transport Basics: TCP and UDP
+
+Transport protocols define how data moves between systems.
+
+### TCP
+**Transmission Control Protocol** is:
+- connection-oriented
+- reliable
+- ordered
+- designed to retransmit lost data
+
+TCP is a good fit when correctness matters more than speed. Web pages, APIs, and most browser traffic rely on TCP.
+
+### UDP
+**User Datagram Protocol** is:
+- connectionless
+- lightweight
+- faster to send
+- not guaranteed to arrive, arrive once, or arrive in order
+
+UDP is useful when low delay matters more than perfect reliability, such as:
+- live voice and video
+- online gaming
+- some streaming and real-time systems
+
+### Simple Comparison
+| Protocol | Reliable | Ordered | Connection Setup | Common Uses |
+|----------|----------|---------|------------------|-------------|
+| TCP | Yes | Yes | Yes | HTTP, HTTPS, APIs, file transfer |
+| UDP | No | No | No | Streaming, VoIP, games, DNS queries |
+
+---
+
+## 6. HTTP and HTTPS
+
+**HTTP** stands for **Hypertext Transfer Protocol**. It defines how clients and servers format requests and responses.
+
+**HTTPS** is HTTP over encryption, typically using TLS. It protects data in transit and verifies the identity of the server.
+
+### Common HTTP Methods
+- **GET:** request data
+- **POST:** send new data
+- **PUT:** replace data
+- **PATCH:** update part of existing data
+- **DELETE:** remove data
+
+### Example Request Structure
+- method
+- path
+- headers
+- optional body
+
+### Example Response Structure
+- status code
+- headers
+- response body
+
+### Common Status Codes
+- **200 OK** – request succeeded
+- **201 Created** – new resource created
+- **301/302** – redirect
+- **400 Bad Request** – client sent invalid data
+- **401 Unauthorized** – authentication required
+- **403 Forbidden** – access denied
+- **404 Not Found** – resource does not exist
+- **500 Internal Server Error** – problem on the server
+
+### Headers Students Should Recognize
+- `Content-Type`
+- `Accept`
+- `Authorization`
+- `Cache-Control`
+- `Cookie`
+- `Set-Cookie`
+
+---
+
+## 7. The Request-Response Lifecycle
+
+Here is a useful week one mental model:
+
+1. User enters `https://example.com`
+2. Browser identifies protocol: HTTPS
+3. DNS resolves `example.com` to an IP address
+4. Browser opens a TCP connection to the server
+5. TLS secures the connection
+6. Browser sends an HTTP request
+7. Server processes the request
+8. Server returns an HTTP response
+9. Browser renders the HTML
+10. Browser requests linked CSS, JavaScript, fonts, and images
+
+Students should be able to tell this story clearly by the end of the week.
+
+---
+
+## 8. Why Web Developers Need These Fundamentals
+
+These topics are not just theory. They explain:
+- why pages load slowly
+- why DNS problems break websites
+- why APIs return status codes
+- why secure sites use HTTPS
+- why some applications choose TCP and others use UDP
+- why browser network tools are essential for debugging
+
+Understanding the network layer makes later topics like React, authentication, deployment, and API debugging much easier.
+
+---
+
+## 9. Recommended Week 1 Classroom Activities
+- Review the syllabus and grading structure together
+- Draw the path from browser to server on the board
+- Inspect a page load in browser developer tools
+- Compare a DNS lookup with an HTTP request
+- Sort example use cases into TCP or UDP
+- Interpret common HTTP status codes from sample responses
+
+---
+
+## 10. Vocabulary to Master This Week
+- browser
+- client
+- server
+- packet
+- router
+- IP address
+- IPv4
+- IPv6
+- DHCP
+- DNS
+- TCP
+- UDP
+- port
+- HTTP
+- HTTPS
+- request
+- response
+- header
+- status code
+
+---
+
+## 11. Looking Ahead
+
+Once students understand how the web moves information, the course can build into:
+- HTML structure
+- CSS styling
+- JavaScript and TypeScript
+- React components
+- APIs and persistence
+
+Week one lays the foundation for all of that work.
