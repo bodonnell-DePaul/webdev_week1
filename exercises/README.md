@@ -13,15 +13,15 @@ This directory contains week one exercises focused on Internet communication fun
 ## Week 1: Internet Foundations
 
 ### Exercise 1.1: Trace a Web Request (🟢)
-**File**: `01_git_basics.md`  
+**File**: `01_trace_web_request.md`  
 **Concepts**: client/server model, DNS, HTTP, request-response flow
 
 ### Exercise 1.2: IP Addresses and DNS Practice (🟢)
-**File**: `02_html_structure.md`  
+**File**: `02_ip_dns_practice.md`  
 **Concepts**: IPv4, IPv6, public vs. private IP, DHCP, DNS records
 
 ### Exercise 1.3: TCP, UDP, and HTTP Analysis (🟡)
-**File**: `03_css_challenge.md`  
+**File**: `03_tcp_udp_http_analysis.md`  
 **Concepts**: transport protocols, reliability, latency, status codes, protocol selection
 
 ## Suggested Teaching Flow
