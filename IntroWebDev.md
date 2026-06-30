@@ -109,7 +109,7 @@ DNS connects those two ideas by translating a domain name into one or more IP ad
 
 Transport protocols define how data moves between systems.
 
-## TCP
+### TCP
 **Transmission Control Protocol** is:
 - connection-oriented
 - reliable
@@ -118,7 +118,7 @@ Transport protocols define how data moves between systems.
 
 TCP is a good fit when correctness matters more than speed. Web pages, APIs, and most browser traffic rely on TCP.
 
-## UDP
+### UDP
 **User Datagram Protocol** is:
 - connectionless
 - lightweight
