@@ -1,74 +1,38 @@
 # In-Class Exercises
 
-This directory contains hands-on coding exercises designed for classroom use. Each exercise builds on previous concepts and provides opportunities for students to practice what they've learned.
+This directory contains week one exercises focused on Internet communication fundamentals. The goal is to help students build a mental model of how information moves across the web before they begin building applications.
 
 ## Exercise Organization
 
 ### Difficulty Levels
-- **🟢 Beginner**: Basic concepts, guided practice
-- **🟡 Intermediate**: Combining concepts, more independence
-- **🔴 Advanced**: Complex problems, creative solutions
+- **🟢 Beginner**: Basic concepts and guided practice
+- **🟡 Intermediate**: Applying concepts to realistic scenarios
 
-### Time Estimates
-- **Quick (10-15 min)**: Warm-up exercises, concept reinforcement
-- **Medium (20-30 min)**: Feature implementation, debugging
-- **Long (45+ min)**: Project-based, multi-step problems
+### Exercise List
 
-## Exercise List
+## Week 1: Internet Foundations
 
-### Week 1: Foundations
+### Exercise 1.1: Trace a Web Request (🟢)
+**File**: `01_git_basics.md`  
+**Concepts**: client/server model, DNS, HTTP, request-response flow
 
-#### Exercise 1.1: Git Basics (🟢 Quick)
-**File**: `01_git_basics.md`
-**Concepts**: Git commands, repository creation, basic workflow
-**Time**: 15 minutes
+### Exercise 1.2: IP Addresses and DNS Practice (🟢)
+**File**: `02_html_structure.md`  
+**Concepts**: IPv4, IPv6, public vs. private IP, DHCP, DNS records
 
-#### Exercise 1.2: HTML Structure (🟢 Quick)
-**File**: `02_html_structure.md`
-**Concepts**: Semantic HTML, forms, accessibility
-**Time**: 20 minutes
+### Exercise 1.3: TCP, UDP, and HTTP Analysis (🟡)
+**File**: `03_css_challenge.md`  
+**Concepts**: transport protocols, reliability, latency, status codes, protocol selection
 
-#### Exercise 1.3: CSS Styling Challenge (🟡 Medium)
-**File**: `03_css_challenge.md`
-**Concepts**: Flexbox, responsive design, animations
-**Time**: 30 minutes
-
-
-
-## Troubleshooting Guide
-
-### Common Git Issues
-```bash
-# Merge conflicts
-git status
-git add .
-git commit -m "Resolve merge conflict"
-
-# Forgot to pull before pushing
-git pull origin main
-git push origin main
-```
-
-### Common TypeScript Issues
-- Missing type annotations
-- Incorrect interface definitions
-- DOM element type assertions
-
-### Common React Issues
-- Missing keys in list rendering
-- Incorrect state updates
-- Event handler binding problems
+## Suggested Teaching Flow
+1. Complete the syllabus overview and core lecture first
+2. Work through Exercise 1.1 together as a class
+3. Use Exercise 1.2 for partner practice
+4. Finish with Exercise 1.3 as a discussion-based application activity
 
 ## Resources for Students
+- [MDN: What is the Internet?](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_the_Internet)
+- [MDN: HTTP Overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview)
+- [Cloudflare Learning Center: DNS](https://www.cloudflare.com/learning/dns/what-is-dns/)
 
-### Quick References
-- [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
-- [React Documentation](https://reactjs.org/docs/getting-started.html)
-
-### Practice Platforms
-- [TypeScript Playground](https://www.typescriptlang.org/play)
-- [CodeSandbox](https://codesandbox.io/)
-- [StackBlitz](https://stackblitz.com/)
-
-Remember: The goal is learning, not perfection. Encourage experimentation and learning from mistakes!
+Remember: students do not need to memorize everything immediately. The priority in week one is building a correct, simple mental model.
